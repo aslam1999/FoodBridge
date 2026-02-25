@@ -6,7 +6,7 @@
     <title>Login - FoodBridge</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
     <header class="site-header">
       <div class="container header-flex">
         <div class="logo">
@@ -20,4 +20,51 @@
         </nav>
       </div>
     </header>
+    <main>
+      <section class="login-hero">
+        <div class="login-icon">
+          <img src="assets/logo-icon.png" alt="FoodBridge icon" />
+        </div>
+
+        <h1>Login to FoodBridge</h1>
+        <p>Select your role to continue</p>
+      </section>
+
+      <section class="role-selection">
+        <div class="role-container">
+          <h2>Select Your Role</h2>
+
+          <a href="donor-login.html" class="role-card">
+            <div class="role-icon">
+              <img src="assets/donor.png" alt="" />
+            </div>
+            <div>
+              <h3>Donor</h3>
+              <p>Donate food to your community</p>
+            </div>
+          </a>
+
+          <a href="admin-login.html" class="role-card">
+            <div class="role-icon">
+              <img src="assets/admin.png" alt="" />
+            </div>
+            <div>
+              <h3>Admin</h3>
+              <p>Manage donations and volunteers</p>
+            </div>
+          </a>
+
+          <a href="volunteer-login.html" class="role-card">
+            <div class="role-icon">
+              <img src="assets/volunteer.png" alt="" />
+            </div>
+            <div>
+              <h3>Volunteer</h3>
+              <p>View and manage pickup assignments</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
