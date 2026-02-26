@@ -115,3 +115,35 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* =========================
+   Footer
+========================= */
+
+.site-footer {
+  background: #ffffff;
+  border-top: 1px solid #e2e2e2;
+  padding: 14px 0;
+  font-size: 13px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column; /* mobile first */
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-left p,
+.footer-center p {
+  color: #555;
+}
+
