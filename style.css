@@ -24,3 +24,13 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/* =========================
+   Header
+========================= */
+
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 16px 0;
+}
