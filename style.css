@@ -45,3 +45,17 @@ body {
   font-weight: bold;
   font-size: 18px;
 }
+
+.nav-list {
+  list-style: none;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.nav-list li a:hover {
+  text-decoration: underline;
+}
