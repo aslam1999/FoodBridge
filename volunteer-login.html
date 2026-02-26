@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volunteer Login | FoodBridge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <span>FoodBridge</span>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Back to Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="login-form-section">
+        <div class="login-icon">
+          <img src="assets/volunteer.png" alt="Volunteer icon" />
+        </div>
+
+        <h1>Volunteer Login</h1>
+        <p>Access your volunteer portal</p>
+
+        <form class="login-form" action="#" method="POST">
+          <div class="form-group">
+            <label for="volunteer-email">Email Address</label>
+            <input
+              type="email"
+              id="volunteer-email"
+              name="email"
+              placeholder="volunteer@foodbridge.com"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="volunteer-password">Password</label>
+            <input
+              type="password"
+              id="volunteer-password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <div class="form-options">
+            <a href="#">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn-primary">Login</button>
+
+          <a href="login.html" class="btn-secondary">Change Role</a>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <p>© 2026 FoodBridge</p>
+        </div>
+
+        <div class="footer-center">
+          <p>Contact: support@foodbridge.org</p>
+        </div>
+
+        <div class="footer-right">
+          <ul class="social-links">
+            <li>
+              <a href="#" aria-label="Facebook">
+                <img src="assets/facebook.png" alt="Facebook icon" />
+              </a>
+            </li>
+
+            <li>
+              <a href="#" aria-label="Instagram">
+                <img src="assets/instagram.png" alt="Instagram icon" />
+              </a>
+            </li>
+
+            <li>
+              <a href="#" aria-label="LinkedIn">
+                <img src="assets/linkedin.png" alt="LinkedIn icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
