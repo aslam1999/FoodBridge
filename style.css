@@ -1,0 +1,26 @@
+/* =========================
+   Base Reset
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f6f8;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* =========================
+   Layout Containers
+========================= */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
