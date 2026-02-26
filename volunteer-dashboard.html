@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volunteer | FoodBridge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <span>FoodBridge</span>
+        </div>
+
+        <nav class="nav">
+          <ul class="nav-list">
+            <li><a href="index.html">Back to Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="dashboard-header">
+        <h1>My Assignments</h1>
+        <p>View and manage your assigned donation pickups</p>
+      </section>
+
+      <section class="dashboard-stats">
+        <div class="stat-card new">
+          <h3>New Assignments</h3>
+          <p class="stat-number">1</p>
+        </div>
+
+        <div class="stat-card accepted">
+          <h3>Accepted</h3>
+          <p class="stat-number">1</p>
+        </div>
+
+        <div class="stat-card completed">
+          <h3>Completed</h3>
+          <p class="stat-number">1</p>
+        </div>
+      </section>
+
+      <section class="assignment-list">
+        <!-- NEW / ASSIGNED -->
+        <div class="assignment-card">
+          <div class="assignment-header">
+            <h3>Donation #D002</h3>
+            <span class="status assigned">Assigned</span>
+          </div>
+
+          <div class="assignment-body">
+            <div class="assignment-left">
+              <p><strong>Food:</strong> Canned goods</p>
+              <p><strong>Quantity:</strong> 30 items</p>
+              <p><strong>Pickup Location:</strong> 456 Oak Ave, Springfield</p>
+              <p><strong>Pickup Date & Time:</strong> 2026-02-27 10:30</p>
+            </div>
+
+            <div class="assignment-right">
+              <p><strong>Contact Name:</strong> Sarah Johnson</p>
+              <p><strong>Contact Phone:</strong> (555) 234-5678</p>
+
+              <div class="notes-box">
+                <p><strong>Notes:</strong></p>
+                <p>Please call before arriving. Enter through the back door.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="assignment-actions">
+            <button class="btn-primary">Accept Assignment</button>
+            <button class="btn-secondary">Decline</button>
+          </div>
+        </div>
+
+        <!-- ACCEPTED -->
+        <div class="assignment-card">
+          <div class="assignment-header">
+            <h3>Donation #D005</h3>
+            <span class="status accepted">Accepted</span>
+          </div>
+
+          <div class="assignment-body">
+            <div class="assignment-left">
+              <p><strong>Food:</strong> Fresh produce</p>
+              <p><strong>Quantity:</strong> 12 lbs</p>
+              <p><strong>Pickup Location:</strong> 567 Maple Dr, Springfield</p>
+              <p><strong>Pickup Date & Time:</strong> 2026-02-28 15:00</p>
+            </div>
+
+            <div class="assignment-right">
+              <p><strong>Contact Name:</strong> Green Grocery</p>
+              <p><strong>Contact Phone:</strong> (555) 567-8901</p>
+
+              <div class="notes-box">
+                <p><strong>Notes:</strong></p>
+                <p>Items are in refrigerated storage. Ask for manager.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="assignment-actions">
+            <button class="btn-small">Mark Pickup Complete</button>
+          </div>
+        </div>
+
+        <!-- COMPLETED -->
+        <div class="assignment-card completed-card">
+          <div class="assignment-header">
+            <h3>Donation #D003</h3>
+            <span class="status completed">Completed</span>
+          </div>
+
+          <div class="assignment-body">
+            <div class="assignment-left">
+              <p><strong>Food:</strong> Baked goods</p>
+              <p><strong>Quantity:</strong> 20 items</p>
+              <p><strong>Pickup Location:</strong> 789 Pine Rd, Springfield</p>
+              <p><strong>Pickup Date & Time:</strong> 2026-02-26 16:00</p>
+            </div>
+
+            <div class="assignment-right">
+              <p><strong>Contact Name:</strong> Local Bakery</p>
+              <p><strong>Contact Phone:</strong> (555) 345-6789</p>
+
+              <div class="notes-box">
+                <p><strong>Notes:</strong></p>
+                <p>Pickup completed successfully.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="assignment-actions">
+            <button class="btn-small disabled" disabled>Completed</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-left">
+          <p>© 2026 FoodBridge</p>
+        </div>
+
+        <div class="footer-center">
+          <p>Contact: support@foodbridge.org</p>
+        </div>
+
+        <div class="footer-right">
+          <ul class="social-links">
+            <li>
+              <a href="#" aria-label="Facebook">
+                <img src="assets/facebook.png" alt="Facebook icon" />
+              </a>
+            </li>
+
+            <li>
+              <a href="#" aria-label="Instagram">
+                <img src="assets/instagram.png" alt="Instagram icon" />
+              </a>
+            </li>
+
+            <li>
+              <a href="#" aria-label="LinkedIn">
+                <img src="assets/linkedin.png" alt="LinkedIn icon" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
