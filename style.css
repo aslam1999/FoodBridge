@@ -197,3 +197,26 @@ img {
   transform: scale(1.1);
   opacity: 0.8;
 }
+
+/* =========================
+   Desktop Layout
+========================= */
+
+@media (min-width: 768px) {
+  .features {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .feature-card {
+    flex: 1;
+    margin-bottom: 0;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
