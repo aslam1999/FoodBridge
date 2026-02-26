@@ -107,3 +107,11 @@ body {
   background-color: #bbb;
   cursor: not-allowed;
 }
+
+/* =========================
+   Images
+========================= */
+img {
+  max-width: 100%;
+  height: auto;
+}
