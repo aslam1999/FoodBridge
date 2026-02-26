@@ -159,8 +159,7 @@ img {
 
 .footer-container {
   display: flex;
-  flex-direction: column; /* mobile first */
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
   text-align: center;
 }
