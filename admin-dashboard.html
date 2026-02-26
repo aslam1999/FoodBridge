@@ -68,7 +68,16 @@
               <td>John Smith<br />(555) 123-4567</td>
               <td><span class="status pending">Pending</span></td>
               <td>
-                <button class="btn-small">Assign Volunteer</button>
+                <form class="assign-form">
+                  <select name="volunteer" class="volunteer-select">
+                    <option value="">Assign Volunteer</option>
+                    <option value="mike">Mike Chen</option>
+                    <option value="emily">Emily Davis</option>
+                    <option value="alex">Alex Brown</option>
+                  </select>
+
+                  <button type="submit" class="btn-small">Assign</button>
+                </form>
               </td>
             </tr>
 
