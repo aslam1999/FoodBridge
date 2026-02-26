@@ -147,3 +147,23 @@ img {
   color: #555;
 }
 
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+  padding: 0;
+}
+
+.social-links img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.social-links a:hover img {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
