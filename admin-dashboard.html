@@ -20,7 +20,87 @@
         </nav>
       </div>
     </header>
+    <main>
+      <section class="dashboard-header">
+        <h1>Donation Management</h1>
+        <p>View and assign donations to volunteers</p>
+      </section>
 
+      <section class="dashboard-stats">
+        <div class="stat-card pending">
+          <h3>Pending Donations</h3>
+          <p class="stat-number">2</p>
+        </div>
+
+        <div class="stat-card assigned">
+          <h3>Assigned</h3>
+          <p class="stat-number">1</p>
+        </div>
+
+        <div class="stat-card completed">
+          <h3>Completed</h3>
+          <p class="stat-number">1</p>
+        </div>
+      </section>
+
+      <section class="dashboard-table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Food Type</th>
+              <th>Quantity</th>
+              <th>Pickup Location</th>
+              <th>Pickup Date/Time</th>
+              <th>Contact</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>D001</td>
+              <td>Fresh produce (vegetables)</td>
+              <td>15 lbs</td>
+              <td>123 Main St, Springfield</td>
+              <td>2026-02-28 14:00</td>
+              <td>John Smith<br />(555) 123-4567</td>
+              <td><span class="status pending">Pending</span></td>
+              <td>
+                <button class="btn-small">Assign Volunteer</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>D002</td>
+              <td>Canned goods</td>
+              <td>30 items</td>
+              <td>456 Oak Ave, Springfield</td>
+              <td>2026-02-27 10:30</td>
+              <td>Sarah Johnson<br />(555) 234-5678</td>
+              <td><span class="status assigned">Assigned</span></td>
+              <td>
+                <button class="btn-small disabled" disabled>In Progress</button>
+              </td>
+            </tr>
+
+            <tr>
+              <td>D003</td>
+              <td>Baked goods</td>
+              <td>20 items</td>
+              <td>789 Pine Rd, Springfield</td>
+              <td>2026-02-26 16:00</td>
+              <td>Local Bakery<br />(555) 345-6789</td>
+              <td><span class="status completed">Completed</span></td>
+              <td>
+                <button class="btn-small disabled" disabled>Completed</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
     <footer class="site-footer">
       <div class="footer-container">
         <div class="footer-left">
