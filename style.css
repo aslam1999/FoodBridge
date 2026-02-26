@@ -40,3 +40,8 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+.logo span {
+  font-weight: bold;
+  font-size: 18px;
+}
