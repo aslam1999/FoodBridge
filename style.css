@@ -68,6 +68,28 @@ section {
   padding: 40px 0;
 }
 
+.features {
+  text-align: center;
+}
+
+.feature-card {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+}
+
+.feature-card h3 {
+  margin: 12px 0 8px 0;
+  font-size: 18px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: #555;
+}
+
 /* =========================
    Buttons
 ========================= */
