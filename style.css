@@ -80,3 +80,30 @@ body {
 .btn-primary:hover {
   background-color: #444;
 }
+
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #e4e4e4;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-small {
+  padding: 6px 12px;
+  font-size: 12px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-small.disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
