@@ -29,6 +29,44 @@
           <!-- Food Details -->
           <fieldset>
             <legend>Food Details</legend>
+            <div class="form-group">
+              <label for="food-type">Food Type</label>
+              <input
+                type="text"
+                id="food-type"
+                name="food_type"
+                placeholder="e.g., Cooked rice, Bread, Vegetables"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                placeholder="Enter quantity"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="category">Food Category</label>
+              <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="cooked">Cooked Food</option>
+                <option value="packaged">Packaged Food</option>
+                <option value="fresh">Fresh Produce</option>
+                <option value="bakery">Bakery Items</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="expiry">Best Before Date</label>
+              <input type="date" id="expiry" name="expiry_date" required />
+            </div>
           </fieldset>
 
           <!-- Pickup Details -->
