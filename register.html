@@ -47,6 +47,142 @@
             Volunteer
           </button>
         </div>
+
+        <!-- Registration Form -->
+        <form
+          class="register-form"
+          id="register-form"
+          action="#"
+          method="POST"
+          novalidate
+        >
+          <input type="hidden" name="role" id="role-field" value="donor" />
+
+          <!-- Personal Details -->
+          <p class="form-section-label">Personal Details</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input
+                type="text"
+                id="first-name"
+                name="first_name"
+                placeholder="Jane"
+                required
+                autocomplete="given-name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input
+                type="text"
+                id="last-name"
+                name="last_name"
+                placeholder="Doe"
+                required
+                autocomplete="family-name"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="jane@example.com"
+              required
+              autocomplete="email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="(555) 123-4567"
+              required
+              autocomplete="tel"
+            />
+          </div>
+
+          <!-- Volunteer-only fields -->
+          <div class="volunteer-only" id="volunteer-fields">
+            <p class="form-section-label">Volunteer Details</p>
+
+            <div class="form-group">
+              <label for="availability">Availability</label>
+              <select id="availability" name="availability">
+                <option value="">Select availability</option>
+                <option value="weekdays">Weekdays</option>
+                <option value="weekends">Weekends</option>
+                <option value="both">Weekdays &amp; Weekends</option>
+                <option value="flexible">Flexible</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="area">Service Area / City</label>
+              <input
+                type="text"
+                id="area"
+                name="service_area"
+                placeholder="e.g., Springfield"
+              />
+            </div>
+          </div>
+
+          <!-- Account Security -->
+          <p class="form-section-label">Account Security</p>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              required
+              autocomplete="new-password"
+            />
+            <p class="field-hint">Minimum 8 characters.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm_password"
+              placeholder="Re-enter your password"
+              required
+              autocomplete="new-password"
+            />
+          </div>
+
+          <!-- Terms -->
+          <div class="checkbox-group">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">
+              I agree to the
+              <a href="#">Terms of Service</a> and
+              <a href="#">Privacy Policy</a>.
+            </label>
+          </div>
+
+          <button type="submit" class="btn-primary">Create Account</button>
+
+          <p class="login-link">
+            Already have an account? <a href="login.html">Log in here</a>
+          </p>
+        </form>
+      </section>
+    </main>
+
     <footer class="site-footer">
       <div class="container footer-container">
         <div class="footer-left">
