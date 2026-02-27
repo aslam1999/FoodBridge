@@ -656,4 +656,12 @@ img {
     align-items: flex-start;
     gap: 8px;
   }
+  .assignment-body {
+    flex-direction: row;
+  }
+
+  .assignment-left,
+  .assignment-right {
+    flex: 1;
+  }
 }
