@@ -43,71 +43,65 @@
         </div>
       </section>
 
-      <section class="dashboard-table">
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Food Type</th>
-              <th>Quantity</th>
-              <th>Pickup Location</th>
-              <th>Pickup Date/Time</th>
-              <th>Contact</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
+      <section class="donation-list">
+        <div class="donation-card">
+          <div class="donation-card-header">
+            <span class="donation-id">D001</span>
+            <span class="status pending">Pending</span>
+          </div>
+          <div class="donation-card-body">
+            <p><strong>Food:</strong> Fresh produce (vegetables)</p>
+            <p><strong>Quantity:</strong> 15 lbs</p>
+            <p><strong>Pickup Location:</strong> 123 Main St, Springfield</p>
+            <p><strong>Pickup Date/Time:</strong> 2026-02-28 14:00</p>
+            <p><strong>Contact:</strong> John Smith — (555) 123-4567</p>
+          </div>
+          <div class="donation-card-actions">
+            <form class="assign-form">
+              <select name="volunteer" class="volunteer-select">
+                <option value="">Assign Volunteer</option>
+                <option value="mike">Mike Chen</option>
+                <option value="emily">Emily Davis</option>
+                <option value="alex">Alex Brown</option>
+              </select>
+              <button type="submit" class="btn-small">Assign</button>
+            </form>
+          </div>
+        </div>
 
-          <tbody>
-            <tr>
-              <td>D001</td>
-              <td>Fresh produce (vegetables)</td>
-              <td>15 lbs</td>
-              <td>123 Main St, Springfield</td>
-              <td>2026-02-28 14:00</td>
-              <td>John Smith<br />(555) 123-4567</td>
-              <td><span class="status pending">Pending</span></td>
-              <td>
-                <form class="assign-form">
-                  <select name="volunteer" class="volunteer-select">
-                    <option value="">Assign Volunteer</option>
-                    <option value="mike">Mike Chen</option>
-                    <option value="emily">Emily Davis</option>
-                    <option value="alex">Alex Brown</option>
-                  </select>
+        <div class="donation-card">
+          <div class="donation-card-header">
+            <span class="donation-id">D002</span>
+            <span class="status assigned">Assigned</span>
+          </div>
+          <div class="donation-card-body">
+            <p><strong>Food:</strong> Canned goods</p>
+            <p><strong>Quantity:</strong> 30 items</p>
+            <p><strong>Pickup Location:</strong> 456 Oak Ave, Springfield</p>
+            <p><strong>Pickup Date/Time:</strong> 2026-02-27 10:30</p>
+            <p><strong>Contact:</strong> Sarah Johnson — (555) 234-5678</p>
+          </div>
+          <div class="donation-card-actions">
+            <button class="btn-small disabled" disabled>In Progress</button>
+          </div>
+        </div>
 
-                  <button type="submit" class="btn-small">Assign</button>
-                </form>
-              </td>
-            </tr>
-
-            <tr>
-              <td>D002</td>
-              <td>Canned goods</td>
-              <td>30 items</td>
-              <td>456 Oak Ave, Springfield</td>
-              <td>2026-02-27 10:30</td>
-              <td>Sarah Johnson<br />(555) 234-5678</td>
-              <td><span class="status assigned">Assigned</span></td>
-              <td>
-                <button class="btn-small disabled" disabled>In Progress</button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>D003</td>
-              <td>Baked goods</td>
-              <td>20 items</td>
-              <td>789 Pine Rd, Springfield</td>
-              <td>2026-02-26 16:00</td>
-              <td>Local Bakery<br />(555) 345-6789</td>
-              <td><span class="status completed">Completed</span></td>
-              <td>
-                <button class="btn-small disabled" disabled>Completed</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="donation-card">
+          <div class="donation-card-header">
+            <span class="donation-id">D003</span>
+            <span class="status completed">Completed</span>
+          </div>
+          <div class="donation-card-body">
+            <p><strong>Food:</strong> Baked goods</p>
+            <p><strong>Quantity:</strong> 20 items</p>
+            <p><strong>Pickup Location:</strong> 789 Pine Rd, Springfield</p>
+            <p><strong>Pickup Date/Time:</strong> 2026-02-26 16:00</p>
+            <p><strong>Contact:</strong> Local Bakery — (555) 345-6789</p>
+          </div>
+          <div class="donation-card-actions">
+            <button class="btn-small disabled" disabled>Completed</button>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="site-footer">
