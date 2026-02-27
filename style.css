@@ -496,7 +496,79 @@ img {
   align-items: center;
   gap: 8px;
 }
+/* =========================
+   Volunteer Dashboard - Cards
+========================= */
 
+.assignment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 0;
+}
+
+.assignment-card {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 16px 20px;
+}
+
+.assignment-card.completed-card {
+  opacity: 0.7;
+}
+
+.assignment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.assignment-header h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #222;
+}
+
+.assignment-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.assignment-left p,
+.assignment-right p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.notes-box {
+  background: #f5f6f8;
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin-top: 8px;
+}
+
+.notes-box p {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.assignment-actions {
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 10px;
+}
+
+.status.accepted {
+  background: #f0e6ff;
+  color: #6200b3;
+}
 /* =========================
    Footer
 ========================= */
