@@ -348,6 +348,11 @@ img {
   color: #222;
   text-decoration: underline;
 }
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 16px;
+}
 
 /* =========================
    Footer
