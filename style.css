@@ -468,6 +468,34 @@ img {
   background: #e0f5e9;
   color: #1a7a3c;
 }
+/* =========================
+   Admin Dashboard - Cards
+========================= */
+
+.donation-card-actions {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volunteer-select {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #222;
+  background: #fff;
+  font-family: inherit;
+}
+
+.assign-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
 /* =========================
    Footer
