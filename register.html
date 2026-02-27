@@ -19,6 +19,34 @@
         </nav>
       </div>
     </header>
+
+    <main class="container">
+      <section class="register-section">
+        <h1>Create an Account</h1>
+        <p>Join FoodBridge as a donor or volunteer</p>
+
+        <!-- Role Toggle -->
+        <div class="role-toggle" role="group" aria-label="Select account type">
+          <button
+            type="button"
+            class="active"
+            id="toggle-donor"
+            aria-pressed="true"
+            onclick="switchRole('donor')"
+          >
+            <img src="assets/donor.png" alt="" />
+            Donor
+          </button>
+          <button
+            type="button"
+            id="toggle-volunteer"
+            aria-pressed="false"
+            onclick="switchRole('volunteer')"
+          >
+            <img src="assets/volunteer.png" alt="" />
+            Volunteer
+          </button>
+        </div>
     <footer class="site-footer">
       <div class="container footer-container">
         <div class="footer-left">
