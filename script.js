@@ -45,3 +45,55 @@ if (registerForm) {
     }
   });
 }
+
+// =========================
+// Volunteer Dashboard - Status Updates
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+  const assignmentCards = document.querySelectorAll(".assignment-card");
+  if (!assignmentCards.length) return;
+
+  assignmentCards.forEach(function (card) {
+    const acceptBtn = card.querySelector(".btn-primary");
+    const completeBtn = card.querySelector(".btn-small:not(.disabled)");
+    const statusBadge = card.querySelector(".status");
+
+    // Accept Assignment
+    if (acceptBtn) {
+      acceptBtn.addEventListener("click", function () {
+        statusBadge.textContent = "Accepted";
+        statusBadge.className = "status accepted";
+        acceptBtn.remove();
+        const declineBtn = card.querySelector(".btn-secondary");
+        if (declineBtn) declineBtn.remove();
+
+        const completeButton = document.createElement("button");
+        completeButton.className = "btn-small";
+        completeButton.textContent = "Mark Pickup Complete";
+        card.querySelector(".assignment-actions").appendChild(completeButton);
+
+        // Attach complete listener to new button
+        completeButton.addEventListener("click", function () {
+          markComplete(card, statusBadge, completeButton);
+        });
+      });
+    }
+
+    // Mark Complete
+    if (completeBtn) {
+      completeBtn.addEventListener("click", function () {
+        markComplete(card, statusBadge, completeBtn);
+      });
+    }
+  });
+
+  function markComplete(card, statusBadge, btn) {
+    statusBadge.textContent = "Completed";
+    statusBadge.className = "status completed";
+    card.classList.add("completed-card");
+    btn.textContent = "Completed";
+    btn.classList.add("disabled");
+    btn.disabled = true;
+  }
+});
