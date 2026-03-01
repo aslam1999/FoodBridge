@@ -1,4 +1,26 @@
+/* =========================
+   CSS Variables
+========================= */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap");
+:root {
+  --color-primary: #2f6b3f;
+  --color-accent: #f4a261;
+  --color-background: #f7f7f7;
+  --color-text: #333333;
+  --color-white: #ffffff;
+  --color-border: #e2e2e2;
+  --color-muted: #555555;
+
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
 /* =========================
    Base Reset
 ========================= */
