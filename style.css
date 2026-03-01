@@ -439,6 +439,13 @@ img {
 .form-options a:hover {
   text-decoration: underline;
 }
+
+.login-form .btn-primary,
+.login-form .btn-secondary {
+  width: 100%;
+  text-align: center;
+  margin-top: 8px;
+}
 /* =========================
    Dashboard - Shared
 ========================= */
