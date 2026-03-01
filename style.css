@@ -50,6 +50,16 @@ body {
   padding: 16px 0;
 }
 
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .logo span {
   font-family: var(--font-heading);
   font-weight: 700;
