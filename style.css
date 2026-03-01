@@ -520,6 +520,57 @@ img {
 }
 
 /* =========================
+   Donation Form
+========================= */
+
+.donation-section {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.donation-section h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.donation-section > p {
+  color: var(--color-muted);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.donation-form fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: var(--color-white);
+}
+
+.donation-form legend {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  padding: 0 8px;
+}
+
+.donation-form .btn-primary {
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.donation-form .btn-secondary {
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  font-size: 15px;
+}
+
+/* =========================
    Dashboard - Shared
 ========================= */
 
