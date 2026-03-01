@@ -413,6 +413,11 @@ img {
   margin-bottom: 6px;
 }
 
+.login-form-section > p {
+  color: var(--color-muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
 /* =========================
    Dashboard - Shared
 ========================= */
