@@ -408,6 +408,11 @@ img {
   margin-bottom: 16px;
 }
 
+.login-form-section h1 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
 /* =========================
    Dashboard - Shared
 ========================= */
