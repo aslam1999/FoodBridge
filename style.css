@@ -418,6 +418,27 @@ img {
   font-size: 14px;
   margin-bottom: 24px;
 }
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-options {
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+.form-options a {
+  font-size: 13px;
+  color: var(--color-muted);
+  text-decoration: none;
+}
+
+.form-options a:hover {
+  text-decoration: underline;
+}
 /* =========================
    Dashboard - Shared
 ========================= */
