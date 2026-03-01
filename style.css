@@ -401,6 +401,13 @@ img {
   text-align: center;
   padding: 40px 0;
 }
+
+.login-icon img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+}
+
 /* =========================
    Dashboard - Shared
 ========================= */
