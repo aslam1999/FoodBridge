@@ -57,6 +57,31 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // =========================
+// Donation Form - Guest vs Logged-in
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+  const contactFieldset = document.getElementById("contact-fieldset");
+  if (!contactFieldset) return;
+
+  // TODO: Replace with PHP session when backend is ready
+  const loggedInUser = null;
+
+  if (loggedInUser) {
+    contactFieldset.classList.add("contact-hidden");
+    document.getElementById("donor-name").value = loggedInUser.name;
+    document.getElementById("donor-email").value = loggedInUser.email;
+    document.getElementById("donor-phone").value = loggedInUser.phone;
+    document.getElementById("address").value = loggedInUser.address;
+    document.getElementById("city").value = loggedInUser.city;
+    document.getElementById("postal").value = loggedInUser.postal;
+    document.getElementById("donor-name").removeAttribute("required");
+    document.getElementById("donor-email").removeAttribute("required");
+    document.getElementById("donor-phone").removeAttribute("required");
+  }
+});
+
+// =========================
 // Volunteer Dashboard - Status Updates
 // =========================
 
