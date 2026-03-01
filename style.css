@@ -446,6 +446,79 @@ img {
   text-align: center;
   margin-top: 8px;
 }
+
+/* =========================
+   Role Selection Page
+========================= */
+
+.login-hero {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.login-hero h1 {
+  font-size: 26px;
+  margin-bottom: 6px;
+}
+
+.login-hero > p {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.role-selection {
+  padding-top: 24px;
+}
+
+.role-container {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.role-container h2 {
+  font-size: 16px;
+  color: var(--color-muted);
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.role-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.role-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.role-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.role-card h3 {
+  font-size: 15px;
+  margin-bottom: 2px;
+}
+
+.role-card p {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
 /* =========================
    Dashboard - Shared
 ========================= */
