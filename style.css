@@ -37,6 +37,13 @@ h1 {
   font-size: 20px;
   color: var(--color-primary);
 }
+
+.nav-list li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 14px;
+}
+
 /* =========================
    Base Reset
 ========================= */
