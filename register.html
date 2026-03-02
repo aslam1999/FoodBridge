@@ -177,14 +177,19 @@
 
           <div class="form-group">
             <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Create a password"
-              required
-              autocomplete="new-password"
-            />
+            <div class="input-with-icon">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Create a password"
+                required
+                autocomplete="new-password"
+              />
+              <button type="button" class="toggle-password" id="toggle-pw">
+                👁️
+              </button>
+            </div>
             <p class="field-hint">Minimum 8 characters.</p>
           </div>
 

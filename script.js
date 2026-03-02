@@ -35,6 +35,20 @@ document.addEventListener("DOMContentLoaded", function () {
     switchRole("volunteer");
   });
 
+  const togglePw = document.getElementById("toggle-pw");
+  if (togglePw) {
+    togglePw.addEventListener("click", function () {
+      const pwInput = document.getElementById("password");
+      if (pwInput.type === "password") {
+        pwInput.type = "text";
+        togglePw.textContent = "🙈";
+      } else {
+        pwInput.type = "password";
+        togglePw.textContent = "👁️";
+      }
+    });
+  }
+
   if (registerForm) {
     registerForm.addEventListener("submit", function (e) {
       const pw = document.getElementById("password").value;
