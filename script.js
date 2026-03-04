@@ -78,21 +78,26 @@ document.addEventListener("DOMContentLoaded", function () {
   const contactFieldset = document.getElementById("contact-fieldset");
   if (!contactFieldset) return;
 
-  // TODO: Replace with PHP session when backend is ready
-  const loggedInUser = null;
+  document.addEventListener("DOMContentLoaded", function () {
+  const contactFieldset = document.getElementById("contact-fieldset");
+  if (!contactFieldset) return;
 
-  if (loggedInUser) {
-    contactFieldset.classList.add("contact-hidden");
-    document.getElementById("donor-name").value = loggedInUser.name;
-    document.getElementById("donor-email").value = loggedInUser.email;
-    document.getElementById("donor-phone").value = loggedInUser.phone;
-    document.getElementById("address").value = loggedInUser.address;
-    document.getElementById("city").value = loggedInUser.city;
-    document.getElementById("postal").value = loggedInUser.postal;
-    document.getElementById("donor-name").removeAttribute("required");
-    document.getElementById("donor-email").removeAttribute("required");
-    document.getElementById("donor-phone").removeAttribute("required");
-  }
+  fetch('get_session.php')
+    .then(function(response) { return response.json(); })
+    .then(function(data) {
+      if (data.loggedIn) {
+        contactFieldset.classList.add("contact-hidden");
+        document.getElementById("donor-name").value = data.name;
+        document.getElementById("donor-email").value = data.email;
+        document.getElementById("donor-phone").value = data.phone;
+        document.getElementById("address").value = data.address;
+        document.getElementById("city").value = data.city;
+        document.getElementById("postal").value = data.postal;
+        document.getElementById("donor-name").removeAttribute("required");
+        document.getElementById("donor-email").removeAttribute("required");
+        document.getElementById("donor-phone").removeAttribute("required");
+      }
+    });
 });
 
 // =========================
