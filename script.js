@@ -77,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const contactFieldset = document.getElementById("contact-fieldset");
   if (!contactFieldset) return;
+  console.log("contact fieldset found");
 
   fetch("get_session.php")
     .then(function (response) {
@@ -85,15 +86,15 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(function (data) {
       if (data.loggedIn) {
         contactFieldset.classList.add("contact-hidden");
-        document.getElementById("donor-name").value = data.name;
-        document.getElementById("donor-email").value = data.email;
-        document.getElementById("donor-phone").value = data.phone;
+        document.getElementById("contact-name").value = data.name;
+        document.getElementById("contact-email").value = data.email;
+        document.getElementById("contact-phone").value = data.phone;
         document.getElementById("address").value = data.address;
         document.getElementById("city").value = data.city;
         document.getElementById("postal").value = data.postal;
-        document.getElementById("donor-name").removeAttribute("required");
-        document.getElementById("donor-email").removeAttribute("required");
-        document.getElementById("donor-phone").removeAttribute("required");
+        document.getElementById("contact-name").removeAttribute("required");
+        document.getElementById("contact-email").removeAttribute("required");
+        document.getElementById("contact-phone").removeAttribute("required");
       }
     });
 });
