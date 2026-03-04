@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
           statusBadge.className = "status completed";
           card.classList.add("completed-card");
           btn.textContent = "Completed";
-          btn.classList.add("disabled");
+          btn.className = "btn-completed";
           btn.disabled = true;
         }
       });
