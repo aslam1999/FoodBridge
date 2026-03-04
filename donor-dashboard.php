@@ -41,7 +41,7 @@ foreach ($donations as $d) {
         </div>
         <nav class="nav">
           <ul class="nav-list">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
         </nav>
