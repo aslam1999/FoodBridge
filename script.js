@@ -71,35 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // =========================
-// Donation Form - Guest vs Logged-in
-// =========================
-
-document.addEventListener("DOMContentLoaded", function () {
-  const contactFieldset = document.getElementById("contact-fieldset");
-  if (!contactFieldset) return;
-  console.log("contact fieldset found");
-
-  fetch("get_session.php")
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      if (data.loggedIn) {
-        contactFieldset.classList.add("contact-hidden");
-        document.getElementById("contact-name").value = data.name;
-        document.getElementById("contact-email").value = data.email;
-        document.getElementById("contact-phone").value = data.phone;
-        document.getElementById("address").value = data.address;
-        document.getElementById("city").value = data.city;
-        document.getElementById("postal").value = data.postal;
-        document.getElementById("contact-name").removeAttribute("required");
-        document.getElementById("contact-email").removeAttribute("required");
-        document.getElementById("contact-phone").removeAttribute("required");
-      }
-    });
-});
-
-// =========================
 // Volunteer Dashboard - Status Updates
 // =========================
 
@@ -108,42 +79,69 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!assignmentCards.length) return;
 
   assignmentCards.forEach(function (card) {
-    const acceptBtn = card.querySelector(".btn-primary");
-    const completeBtn = card.querySelector(".btn-small:not(.disabled)");
+    const acceptBtn = card.querySelector(".accept-btn");
+    const declineBtn = card.querySelector(".decline-btn");
+    const completeBtn = card.querySelector(".complete-btn");
     const statusBadge = card.querySelector(".status");
 
     if (acceptBtn) {
       acceptBtn.addEventListener("click", function () {
-        statusBadge.textContent = "Accepted";
-        statusBadge.className = "status accepted";
-        acceptBtn.remove();
-        const declineBtn = card.querySelector(".btn-secondary");
-        if (declineBtn) declineBtn.remove();
-
-        const completeButton = document.createElement("button");
-        completeButton.className = "btn-small";
-        completeButton.textContent = "Mark Pickup Complete";
-        card.querySelector(".assignment-actions").appendChild(completeButton);
-
-        completeButton.addEventListener("click", function () {
-          markComplete(card, statusBadge, completeButton);
-        });
+        const assignmentId = acceptBtn.getAttribute("data-id");
+        fetch("update_status.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: "assignment_id=" + assignmentId + "&status=accepted",
+        })
+          .then(function (r) {
+            return r.json();
+          })
+          .then(function (data) {
+            if (data.success) {
+              statusBadge.textContent = "Accepted";
+              statusBadge.className = "status accepted";
+              acceptBtn.remove();
+              if (declineBtn) declineBtn.remove();
+              const completeButton = document.createElement("button");
+              completeButton.className = "btn-small complete-btn";
+              completeButton.textContent = "Mark Pickup Complete";
+              completeButton.setAttribute("data-id", assignmentId);
+              card
+                .querySelector(".assignment-actions")
+                .appendChild(completeButton);
+              completeButton.addEventListener("click", function () {
+                markComplete(card, statusBadge, completeButton, assignmentId);
+              });
+            }
+          });
       });
     }
 
     if (completeBtn) {
+      const assignmentId = completeBtn.getAttribute("data-id");
       completeBtn.addEventListener("click", function () {
-        markComplete(card, statusBadge, completeBtn);
+        markComplete(card, statusBadge, completeBtn, assignmentId);
       });
     }
   });
 
-  function markComplete(card, statusBadge, btn) {
-    statusBadge.textContent = "Completed";
-    statusBadge.className = "status completed";
-    card.classList.add("completed-card");
-    btn.textContent = "Completed";
-    btn.classList.add("disabled");
-    btn.disabled = true;
+  function markComplete(card, statusBadge, btn, assignmentId) {
+    fetch("update_status.php", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: "assignment_id=" + assignmentId + "&status=completed",
+    })
+      .then(function (r) {
+        return r.json();
+      })
+      .then(function (data) {
+        if (data.success) {
+          statusBadge.textContent = "Completed";
+          statusBadge.className = "status completed";
+          card.classList.add("completed-card");
+          btn.textContent = "Completed";
+          btn.classList.add("disabled");
+          btn.disabled = true;
+        }
+      });
   }
 });
