@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'volunteer') {
 
 // Fetch volunteer's assignments
 $stmt = $pdo->prepare("
-  SELECT d.*, a.id as assignment_id, a.assigned_at
+  SELECT d.*, a.id as assignment_id, a.donation_id as donation_id, a.assigned_at
   FROM assignments a
   JOIN donations d ON a.donation_id = d.id
   WHERE a.volunteer_id = ?
