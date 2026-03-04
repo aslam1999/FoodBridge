@@ -11,15 +11,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $assignment_id = $_POST['assignment_id'];
   $status        = $_POST['status'];
 
-  // Update donation status
-  $stmt = $pdo->prepare("
-    UPDATE donations d
-    JOIN assignments a ON a.donation_id = d.id
-    SET d.status = ?
-    WHERE a.id = ?
-  ");
-  $stmt->execute([$status, $assignment_id]);
+  // First get the donation_id from the assignment
+  $stmt = $pdo->prepare("SELECT donation_id FROM assignments WHERE id = ?");
+  $stmt->execute([$assignment_id]);
+  $assignment = $stmt->fetch();
 
-  echo json_encode(['success' => true]);
+  if ($assignment) {
+    // Update donation status directly
+    $stmt = $pdo->prepare("UPDATE donations SET status = ? WHERE id = ?");
+    $stmt->execute([$status, $assignment['donation_id']]);
+
+    echo json_encode(['success' => true]);
+  } else {
+    echo json_encode(['success' => false]);
+  }
 }
 ?>
