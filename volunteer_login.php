@@ -2,9 +2,6 @@
 session_start();
 require 'config.php';
 
-var_dump($_POST);
-exit;
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $email    = trim($_POST['email']);
