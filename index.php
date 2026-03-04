@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,11 +20,22 @@
           <img src="assets/logo.png" alt="FoodBridge" />
         </div>
 
-        <nav class="nav">
-          <ul class="nav-list">
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-          </ul>
+       <nav class="nav">
+  <ul class="nav-list">
+    <?php if (isset($_SESSION['user_id']) || isset($_SESSION['admin_id'])): ?>
+      <?php if ($_SESSION['role'] === 'donor'): ?>
+        <li><a href="donor-dashboard.php">My Dashboard</a></li>
+      <?php elseif ($_SESSION['role'] === 'volunteer'): ?>
+        <li><a href="volunteer-dashboard.php">My Dashboard</a></li>
+      <?php elseif ($_SESSION['role'] === 'admin'): ?>
+        <li><a href="admin-dashboard.php">My Dashboard</a></li>
+      <?php endif; ?>
+      <li><a href="logout.php">Logout</a></li>
+    <?php else: ?>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    <?php endif; ?>
+  </ul>
         </nav>
       </div>
     </header>
