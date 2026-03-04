@@ -40,7 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   ]);
 
   // Redirect to login after successful registration
+ if ($role === 'volunteer') {
+  header('Location: volunteer-login.html?success=registered');
+} else {
   header('Location: donor-login.html?success=registered');
-  exit;
+}
 }
 ?>
