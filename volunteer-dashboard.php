@@ -111,8 +111,8 @@ foreach ($assignments as $a) {
                 <?php elseif ($a['status'] === 'accepted'): ?>
                   <button class="btn-small complete-btn" data-id="<?php echo $a['assignment_id']; ?>">Mark Pickup Complete</button>
                 <?php else: ?>
-                  <button class="btn-small disabled" disabled>Completed</button>
-                <?php endif; ?>
+  <button class="btn-completed" disabled>Completed</button>
+<?php endif; ?>
               </div>
             </div>
           <?php endforeach; ?>
