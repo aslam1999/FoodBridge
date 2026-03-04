@@ -632,6 +632,10 @@ img {
   font-size: 15px;
 }
 
+.contact-hidden {
+  display: none;
+}
+
 /* =========================
    Dashboard - Shared
 ========================= */
