@@ -78,13 +78,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const contactFieldset = document.getElementById("contact-fieldset");
   if (!contactFieldset) return;
 
-  document.addEventListener("DOMContentLoaded", function () {
-  const contactFieldset = document.getElementById("contact-fieldset");
-  if (!contactFieldset) return;
-
-  fetch('get_session.php')
-    .then(function(response) { return response.json(); })
-    .then(function(data) {
+  fetch("get_session.php")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
       if (data.loggedIn) {
         contactFieldset.classList.add("contact-hidden");
         document.getElementById("donor-name").value = data.name;
@@ -113,7 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const completeBtn = card.querySelector(".btn-small:not(.disabled)");
     const statusBadge = card.querySelector(".status");
 
-    // Accept Assignment
     if (acceptBtn) {
       acceptBtn.addEventListener("click", function () {
         statusBadge.textContent = "Accepted";
@@ -127,14 +124,12 @@ document.addEventListener("DOMContentLoaded", function () {
         completeButton.textContent = "Mark Pickup Complete";
         card.querySelector(".assignment-actions").appendChild(completeButton);
 
-        // Attach complete listener to new button
         completeButton.addEventListener("click", function () {
           markComplete(card, statusBadge, completeButton);
         });
       });
     }
 
-    // Mark Complete
     if (completeBtn) {
       completeBtn.addEventListener("click", function () {
         markComplete(card, statusBadge, completeBtn);
