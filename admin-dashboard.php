@@ -105,8 +105,10 @@ foreach ($donations as $d) {
                     <button type="submit" class="btn-small">Assign</button>
                   </form>
                 <?php else: ?>
-                  <button class="btn-small disabled" disabled><?php echo ucfirst($donation['status']); ?></button>
-                <?php endif; ?>
+  <button class="btn-small <?php echo $donation['status'] === 'completed' ? 'btn-completed' : 'btn-assigned'; ?>" disabled>
+    <?php echo ucfirst($donation['status']); ?>
+  </button>
+<?php endif; ?>
               </div>
             </div>
           <?php endforeach; ?>
