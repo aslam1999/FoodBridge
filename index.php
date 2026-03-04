@@ -62,7 +62,7 @@
         <section class="features">
           <article class="feature-card">
             <div class="feature-icon">
-              <img src="/assets/food-donation.png" alt="Food donation icon" />
+              <img src="assets/food-donation.png" alt="Food donation icon" />
             </div>
             <h3>Easy Donation</h3>
             <p>Submit food details quickly with pickup information.</p>
@@ -70,7 +70,7 @@
 
           <article class="feature-card">
             <div class="feature-icon">
-              <img src="/assets/volunteer.png" alt="Volunteer icon" />
+              <img src="assets/volunteer.png" alt="Volunteer icon" />
             </div>
             <h3>Volunteer Network</h3>
             <p>Local volunteers collect and distribute donations safely.</p>
@@ -78,7 +78,7 @@
 
           <article class="feature-card">
             <div class="feature-icon">
-              <img src="/assets/collective.png" alt="Community impact icon" />
+              <img src="assets/collective.png" alt="Community impact icon" />
             </div>
             <h3>Community Impact</h3>
             <p>Reduce food waste and support families in need.</p>
