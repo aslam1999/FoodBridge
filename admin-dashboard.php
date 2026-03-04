@@ -22,7 +22,7 @@ $assigned = 0;
 $completed = 0;
 foreach ($donations as $d) {
   if ($d['status'] === 'pending') $pending++;
-  if ($d['status'] === 'assigned') $assigned++;
+  if ($d['status'] === 'assigned' || $d['status'] === 'accepted') $assigned++;
   if ($d['status'] === 'completed') $completed++;
 }
 ?>

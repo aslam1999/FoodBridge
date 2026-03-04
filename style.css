@@ -752,6 +752,11 @@ img {
   color: #1a7a3c;
 }
 
+.status.accepted {
+  background: #f0e6ff;
+  color: #6200b3;
+}
+
 /* =========================
    Admin Dashboard - Cards
 ========================= */
