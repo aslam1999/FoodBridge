@@ -71,6 +71,98 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // =========================
+// Donation Form Validation
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+  const donationForm = document.querySelector(".donation-form");
+  if (!donationForm) return;
+
+  donationForm.addEventListener("submit", function (e) {
+    const foodType = document.getElementById("food-type").value.trim();
+    const quantity = document.getElementById("quantity").value;
+    const category = document.getElementById("category").value;
+    const expiry = document.getElementById("expiry").value;
+    const address = document.getElementById("address").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const postal = document.getElementById("postal").value.trim();
+    const pickupDate = document.getElementById("pickup-date").value;
+    const pickupTime = document.getElementById("pickup-time").value;
+    const today = new Date().toISOString().split("T")[0];
+
+    if (!foodType) {
+      e.preventDefault();
+      showFormError("Please enter the food type.");
+      return;
+    }
+
+    if (!quantity || quantity < 1) {
+      e.preventDefault();
+      showFormError("Please enter a valid quantity.");
+      return;
+    }
+
+    if (!category) {
+      e.preventDefault();
+      showFormError("Please select a food category.");
+      return;
+    }
+
+    if (!expiry) {
+      e.preventDefault();
+      showFormError("Please enter the best before date.");
+      return;
+    }
+
+    if (expiry < today) {
+      e.preventDefault();
+      showFormError("Best before date cannot be in the past.");
+      return;
+    }
+
+    if (!address || !city || !postal) {
+      e.preventDefault();
+      showFormError("Please fill in all pickup address fields.");
+      return;
+    }
+
+    if (!pickupDate) {
+      e.preventDefault();
+      showFormError("Please select a preferred pickup date.");
+      return;
+    }
+
+    if (pickupDate < today) {
+      e.preventDefault();
+      showFormError("Pickup date cannot be in the past.");
+      return;
+    }
+
+    if (!pickupTime) {
+      e.preventDefault();
+      showFormError("Please select a preferred pickup time.");
+      return;
+    }
+  });
+
+  function showFormError(message) {
+    // Remove existing alert if any
+    const existing = document.querySelector(".alert");
+    if (existing) existing.remove();
+
+    const alert = document.createElement("div");
+    alert.className = "alert alert-error";
+    alert.textContent = message;
+
+    const section = document.querySelector(".donation-section");
+    section.insertBefore(alert, section.querySelector(".donation-form"));
+
+    // Scroll to top of form
+    alert.scrollIntoView({ behavior: "smooth" });
+  }
+});
+
+// =========================
 // Volunteer Dashboard - Status Updates
 // =========================
 
