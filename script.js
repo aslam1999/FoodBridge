@@ -291,3 +291,33 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form) form.insertBefore(alert, form.firstChild);
   }
 });
+
+// =========================
+// Dynamic Nav
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navList = document.querySelector(".nav-list");
+  if (!navList) return;
+
+  // Only run on static HTML pages (not PHP dashboards)
+  if (window.location.pathname.includes(".php")) return;
+
+  fetch("get_session.php")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      if (data.loggedIn) {
+        const role = data.role;
+        let dashboardLink = "donor-dashboard.php";
+        if (role === "volunteer") dashboardLink = "volunteer-dashboard.php";
+        if (role === "admin") dashboardLink = "admin-dashboard.php";
+
+        navList.innerHTML = `
+          <li><a href="${dashboardLink}">My Dashboard</a></li>
+          <li><a href="logout.php">Logout</a></li>
+        `;
+      }
+    });
+});
