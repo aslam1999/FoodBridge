@@ -10,7 +10,8 @@ if (isset($_SESSION['user_id'])) {
     'phone'    => $_SESSION['phone'],
     'address'  => $_SESSION['address'],
     'city'     => $_SESSION['city'],
-    'postal'   => $_SESSION['postal']
+    'postal'   => $_SESSION['postal'],
+    'role'     => $_SESSION['role']
   ]);
 } else {
   echo json_encode(['loggedIn' => false]);
