@@ -145,3 +145,29 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 });
+
+// =========================
+// Login Error Messages
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("error") === "invalid_credentials") {
+    const alert = document.createElement("div");
+    alert.className = "alert alert-error";
+    alert.textContent = "Invalid email or password. Please try again.";
+
+    const form = document.querySelector(".login-form");
+    if (form) form.insertBefore(alert, form.firstChild);
+  }
+
+  if (params.get("success") === "registered") {
+    const alert = document.createElement("div");
+    alert.className = "alert alert-success";
+    alert.textContent = "Account created successfully! Please log in.";
+
+    const form = document.querySelector(".login-form");
+    if (form) form.insertBefore(alert, form.firstChild);
+  }
+});
