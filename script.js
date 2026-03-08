@@ -77,7 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   const contactFieldset = document.getElementById("contact-fieldset");
   if (!contactFieldset) return;
-  console.log("contact fieldset found");
 
   fetch("get_session.php")
     .then(function (response) {
