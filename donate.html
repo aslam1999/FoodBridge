@@ -48,14 +48,27 @@
 
             <div class="form-group">
               <label for="quantity">Quantity</label>
-              <input
-                type="number"
-                id="quantity"
-                name="quantity"
-                min="1"
-                placeholder="Enter quantity"
-                required
-              />
+              <div class="input-with-icon">
+                <input
+                  type="number"
+                  id="quantity"
+                  name="quantity"
+                  min="1"
+                  placeholder="Enter quantity"
+                  required
+                />
+                <select name="quantity_unit" id="quantity-unit" required>
+                  <option value="">Unit</option>
+                  <option value="kg">kg</option>
+                  <option value="lbs">lbs</option>
+                  <option value="litres">Litres</option>
+                  <option value="gallons">Gallons</option>
+                  <option value="items">Items</option>
+                  <option value="loaves">Loaves</option>
+                  <option value="boxes">Boxes</option>
+                  <option value="bags">Bags</option>
+                </select>
+              </div>
             </div>
 
             <div class="form-group">
