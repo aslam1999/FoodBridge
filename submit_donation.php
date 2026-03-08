@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   $food_type     = trim($_POST['food_type']);
   $quantity      = trim($_POST['quantity']);
+$quantity_unit = trim($_POST['quantity_unit']);
   $category      = trim($_POST['category']);
   $expiry_date   = $_POST['expiry_date'];
   $pickup_address = trim($_POST['pickup_address']);
@@ -27,17 +28,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 
   $stmt = $pdo->prepare("
-    INSERT INTO donations 
-    (food_type, quantity, category, expiry_date, pickup_address, city, postal_code, pickup_date, pickup_time, notes, donor_name, donor_email, donor_phone, user_id)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-  ");
+  INSERT INTO donations 
+  (food_type, quantity, quantity_unit, category, expiry_date, pickup_address, city, postal_code, pickup_date, pickup_time, notes, donor_name, donor_email, donor_phone, user_id)
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+");
 
-  $stmt->execute([
-    $food_type, $quantity, $category, $expiry_date,
-    $pickup_address, $city, $postal_code, $pickup_date,
-    $pickup_time, $notes, $donor_name, $donor_email,
-    $donor_phone, $user_id
-  ]);
+$stmt->execute([
+  $food_type, $quantity, $quantity_unit, $category, $expiry_date,
+  $pickup_address, $city, $postal_code, $pickup_date,
+  $pickup_time, $notes, $donor_name, $donor_email,
+  $donor_phone, $user_id
+]);
 
   header('Location: confirmation.html');
   exit;
