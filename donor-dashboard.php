@@ -37,7 +37,7 @@ foreach ($donations as $d) {
     <header class="site-header">
       <div class="container header-flex">
         <div class="logo">
-          <span>FoodBridge</span>
+          <img src="assets/logo.png" alt="FoodBridge" />
         </div>
         <nav class="nav">
           <ul class="nav-list">
