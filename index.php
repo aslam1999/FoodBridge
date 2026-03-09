@@ -42,24 +42,18 @@
     <main class="container">
       <div>
         <section class="hero">
-          <div class="hero-icon">
-            <img
-              src="assets/hero.jpg"
-              alt="Food bank volunteers arranging donated food"
-            />
-          </div>
-
-          <h1>Bridging Food Donors and Food Banks</h1>
-
-          <p>
-            FoodBridge helps individuals and small businesses donate surplus
-            food while enabling food banks to manage and distribute it
-            efficiently.
-          </p>
-
-          <a href="donate.html" class="btn-primary">Donate Food</a>
-        </section>
+  <div class="hero-content">
+    <h1>Bridging Food Donors<br>and Food Banks</h1>
+    <p>FoodBridge helps individuals and small businesses donate surplus food while enabling food banks to manage and distribute it efficiently.</p>
+    <a href="donate.html" class="btn-primary">Donate Food Now</a>
+  </div>
+  <div class="hero-image">
+    <img src="assets/hero.jpg" alt="Food bank volunteers arranging donated food" />
+  </div>
+</section>
         <section class="features">
+          <h2 class="section-title">How It Works</h2>
+           <div class="features-grid">
           <article class="feature-card">
             <div class="feature-icon">
               <img src="assets/food-donation.png" alt="Food donation icon" />
@@ -67,6 +61,7 @@
             <h3>Easy Donation</h3>
             <p>Submit food details quickly with pickup information.</p>
           </article>
+          
 
           <article class="feature-card">
             <div class="feature-icon">
@@ -83,8 +78,9 @@
             <h3>Community Impact</h3>
             <p>Reduce food waste and support families in need.</p>
           </article>
+          </div>
         </section>
-      </div>
+    
     </main>
     <footer class="site-footer">
       <div class="container footer-container">
