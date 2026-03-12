@@ -43,7 +43,7 @@
       <div>
         <section class="hero">
   <div class="hero-content">
-    <h1>Bridging Food Donors<br>and Food Banks</h1>
+    <h1>Bridging Food Donors<br>and <span class="text-primary">Food Banks</span></h1>
     <p>FoodBridge helps individuals and small businesses donate surplus food while enabling food banks to manage and distribute it efficiently.</p>
     <a href="donate.html" class="btn-primary">Donate Food Now</a>
   </div>
