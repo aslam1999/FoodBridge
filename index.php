@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,46 +20,52 @@
           <img src="assets/logo.png" alt="FoodBridge" />
         </div>
 
-        <nav class="nav">
-          <ul class="nav-list">
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
-          </ul>
+       <nav class="nav">
+  <ul class="nav-list">
+    <?php if (isset($_SESSION['user_id']) || isset($_SESSION['admin_id'])): ?>
+      <?php if ($_SESSION['role'] === 'donor'): ?>
+        <li><a href="donor-dashboard.php">My Dashboard</a></li>
+      <?php elseif ($_SESSION['role'] === 'volunteer'): ?>
+        <li><a href="volunteer-dashboard.php">My Dashboard</a></li>
+      <?php elseif ($_SESSION['role'] === 'admin'): ?>
+        <li><a href="admin-dashboard.php">My Dashboard</a></li>
+      <?php endif; ?>
+      <li><a href="logout.php">Logout</a></li>
+    <?php else: ?>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="register.html">Register</a></li>
+    <?php endif; ?>
+  </ul>
         </nav>
       </div>
     </header>
     <main class="container">
       <div>
         <section class="hero">
-          <div class="hero-icon">
-            <img
-              src="assets/hero.jpg"
-              alt="Food bank volunteers arranging donated food"
-            />
-          </div>
-
-          <h1>Bridging Food Donors and Food Banks</h1>
-
-          <p>
-            FoodBridge helps individuals and small businesses donate surplus
-            food while enabling food banks to manage and distribute it
-            efficiently.
-          </p>
-
-          <a href="donate.html" class="btn-primary">Donate Food</a>
-        </section>
+  <div class="hero-content">
+    <h1>Bridging Food Donors<br>and Food Banks</h1>
+    <p>FoodBridge helps individuals and small businesses donate surplus food while enabling food banks to manage and distribute it efficiently.</p>
+    <a href="donate.html" class="btn-primary">Donate Food Now</a>
+  </div>
+  <div class="hero-image">
+    <img src="assets/hero.jpg" alt="Food bank volunteers arranging donated food" />
+  </div>
+</section>
         <section class="features">
+          <h2 class="section-title">How It Works</h2>
+           <div class="features-grid">
           <article class="feature-card">
             <div class="feature-icon">
-              <img src="/assets/food-donation.png" alt="Food donation icon" />
+              <img src="assets/food-donation.png" alt="Food donation icon" />
             </div>
             <h3>Easy Donation</h3>
             <p>Submit food details quickly with pickup information.</p>
           </article>
+          
 
           <article class="feature-card">
             <div class="feature-icon">
-              <img src="/assets/volunteer.png" alt="Volunteer icon" />
+              <img src="assets/volunteer.png" alt="Volunteer icon" />
             </div>
             <h3>Volunteer Network</h3>
             <p>Local volunteers collect and distribute donations safely.</p>
@@ -66,13 +73,14 @@
 
           <article class="feature-card">
             <div class="feature-icon">
-              <img src="/assets/collective.png" alt="Community impact icon" />
+              <img src="assets/collective.png" alt="Community impact icon" />
             </div>
             <h3>Community Impact</h3>
             <p>Reduce food waste and support families in need.</p>
           </article>
+          </div>
         </section>
-      </div>
+    
     </main>
     <footer class="site-footer">
       <div class="container footer-container">
