@@ -9,6 +9,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const roleField = document.getElementById("role-field");
   const registerForm = document.getElementById("register-form");
 
+  // Password toggle — runs on ALL pages
+  const togglePw = document.getElementById("toggle-pw");
+  if (togglePw) {
+    togglePw.addEventListener("click", function () {
+      const pwInput = togglePw.previousElementSibling;
+      if (pwInput.type === "password") {
+        pwInput.type = "text";
+        togglePw.textContent = "🙈";
+      } else {
+        pwInput.type = "password";
+        togglePw.textContent = "👁️";
+      }
+    });
+  }
+
   if (!donorBtn || !volunteerBtn) return;
 
   function switchRole(role) {
@@ -35,24 +50,21 @@ document.addEventListener("DOMContentLoaded", function () {
     switchRole("volunteer");
   });
 
-  const togglePw = document.getElementById("toggle-pw");
-  if (togglePw) {
-    togglePw.addEventListener("click", function () {
-      const pwInput = document.getElementById("password");
-      if (pwInput.type === "password") {
-        pwInput.type = "text";
-        togglePw.textContent = "🙈";
-      } else {
-        pwInput.type = "password";
-        togglePw.textContent = "👁️";
-      }
-    });
-  }
-
   if (registerForm) {
     registerForm.addEventListener("submit", function (e) {
       const pw = document.getElementById("password").value;
       const cpw = document.getElementById("confirm-password").value;
+      const phone = document.getElementById("phone").value.trim();
+      const phoneRegex = /^\+?[\d\s\-().]{7,15}$/;
+
+      if (!phoneRegex.test(phone)) {
+        e.preventDefault();
+        alert(
+          "Please enter a valid phone number (digits only, 7–15 characters).",
+        );
+        document.getElementById("phone").focus();
+        return;
+      }
 
       if (pw.length < 8) {
         e.preventDefault();
