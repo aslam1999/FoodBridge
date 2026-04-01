@@ -332,3 +332,28 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 });
+
+// =========================
+// Flatpickr Date/Time Pickers
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof flatpickr === "undefined") return;
+
+  flatpickr("#expiry", {
+    minDate: "today",
+    dateFormat: "Y-m-d",
+  });
+
+  flatpickr("#pickup-date", {
+    minDate: "today",
+    dateFormat: "Y-m-d",
+  });
+
+  flatpickr("#pickup-time", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "h:i K",
+    time_24hr: false,
+  });
+});
