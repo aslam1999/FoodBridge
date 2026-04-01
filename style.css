@@ -112,12 +112,18 @@ section {
   padding: 40px 0;
 }
 
-.feature-card {
+.features {
   background: var(--color-white);
-  padding: 32px 24px;
-  margin-bottom: 20px;
   border-radius: 12px;
-  border: 1px solid var(--color-border);
+  padding: 40px 32px;
+  margin-bottom: 24px;
+}
+
+.feature-card {
+  background: var(--color-background);
+  padding: 32px 24px;
+  border-radius: 12px;
+  border: none;
   text-align: center;
   transition:
     box-shadow 0.2s ease,
@@ -148,7 +154,7 @@ section {
 }
 
 .features {
-  padding: 40px 0;
+  padding: 40px;
 }
 
 .section-title {
@@ -171,9 +177,12 @@ section {
 .hero {
   display: flex;
   flex-direction: column;
+  background: var(--color-white);
+  border-radius: 12px;
   gap: 32px;
-  padding: 48px 0;
+  padding: 48px 32px;
   align-items: center;
+  margin: 24px 0;
 }
 
 .hero-content {
@@ -191,6 +200,10 @@ section {
   color: var(--color-primary);
 }
 
+.text-primary {
+  color: var(--color-primary);
+}
+
 .hero-content p {
   font-size: 16px;
   color: var(--color-muted);
@@ -200,8 +213,11 @@ section {
 
 .hero-image img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  display: block;
 }
 
 /* =========================
@@ -1038,10 +1054,12 @@ img {
 
   .hero-content {
     flex: 1;
+    padding-left: 32px;
   }
 
   .hero-image {
     flex: 1;
+    padding-right: 32px;
   }
 
   .hero-content h1 {
