@@ -90,8 +90,32 @@ h3 {
   list-style: none;
 }
 
+.nav-list li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 14px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-list li a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.2s ease;
+}
+
+.nav-list li a:hover::after {
+  width: 100%;
+}
+
 .nav-list li a:hover {
-  text-decoration: underline;
+  color: var(--color-primary);
+  text-decoration: none;
 }
 
 /* =========================
