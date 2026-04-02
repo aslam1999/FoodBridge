@@ -774,6 +774,28 @@ img {
 }
 
 /* =========================
+   Inline Field Validation
+========================= */
+
+.field-error {
+  color: #e05252;
+  font-size: 12px;
+  margin-top: 4px;
+  display: block;
+}
+
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+  border-color: #e05252;
+}
+
+.form-group input.valid,
+.form-group select.valid {
+  border-color: var(--color-primary);
+}
+
+/* =========================
    Flatpickr Custom Theme
 ========================= */
 

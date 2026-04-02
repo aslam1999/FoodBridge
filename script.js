@@ -54,17 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
     registerForm.addEventListener("submit", function (e) {
       const pw = document.getElementById("password").value;
       const cpw = document.getElementById("confirm-password").value;
-      const phone = document.getElementById("phone").value.trim();
-      const phoneRegex = /^\+?[\d\s\-().]{7,15}$/;
-
-      if (!phoneRegex.test(phone)) {
-        e.preventDefault();
-        alert(
-          "Please enter a valid phone number (digits only, 7–15 characters).",
-        );
-        document.getElementById("phone").focus();
-        return;
-      }
 
       if (pw.length < 8) {
         e.preventDefault();
@@ -355,5 +344,45 @@ document.addEventListener("DOMContentLoaded", function () {
     noCalendar: true,
     dateFormat: "h:i K",
     time_24hr: false,
+  });
+});
+
+// =========================
+// Inline Field Validation (blur)
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+  const forms = document.querySelectorAll(".donation-form, .register-form");
+  console.log("Forms found:", forms.length);
+  if (!forms.length) return;
+
+  function showFieldError(input, message) {
+    input.classList.add("invalid");
+    input.classList.remove("valid");
+    let error = input.parentElement.querySelector(".field-error");
+    if (!error) {
+      error = document.createElement("span");
+      error.className = "field-error";
+      input.parentElement.appendChild(error);
+    }
+    error.textContent = message;
+  }
+
+  function clearFieldError(input) {
+    input.classList.remove("invalid");
+    input.classList.add("valid");
+    const error = input.parentElement.querySelector(".field-error");
+    if (error) error.remove();
+  }
+
+  forms.forEach(function (form) {
+    const requiredFields = form.querySelectorAll(
+      "input[required], select[required], textarea[required]",
+    );
+    console.log("Required fields found:", requiredFields.length);
+
+        }
+      });
+    });
   });
 });
