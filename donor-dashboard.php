@@ -16,10 +16,12 @@ $donations = $stmt->fetchAll();
 // Count stats
 $total = count($donations);
 $pending = 0;
+$assigned = 0;
 $completed = 0;
 foreach ($donations as $d) {
-  if ($d['status'] === 'pending') $pending++;
-  if ($d['status'] === 'completed') $completed++;
+  if ($d['status'] === 'pending')                                  $pending++;
+  if ($d['status'] === 'assigned' || $d['status'] === 'accepted')  $assigned++;
+  if ($d['status'] === 'completed')                                 $completed++;
 }
 ?>
 <!doctype html>
