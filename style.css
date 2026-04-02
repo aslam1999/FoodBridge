@@ -130,11 +130,6 @@ section {
     transform 0.2s ease;
 }
 
-.feature-card:hover {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
-}
-
 .feature-icon img {
   width: 64px;
   height: 64px;
@@ -236,11 +231,14 @@ section {
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
 }
 
 .btn-primary:hover {
   background-color: #e08c4a;
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -254,6 +252,15 @@ section {
   font-family: var(--font-body);
   border: none;
   cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #d0d0d0;
+  transition: background 0.2s ease;
+  transform: translateY(-2px);
 }
 
 .btn-small {
@@ -1181,4 +1188,47 @@ span.flatpickr-weekday {
   .assignment-right {
     flex: 1;
   }
+}
+
+/* =========================
+   UI Polish
+========================= */
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(47, 107, 63, 0.1);
+}
+
+/* Placeholder colour */
+::placeholder {
+  color: #aaaaaa;
+  opacity: 1;
+}
+
+/* Smooth transitions on inputs */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  box-shadow: 0 0 0 3px rgba(47, 107, 63, 0.1);
 }
