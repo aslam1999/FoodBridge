@@ -381,6 +381,34 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     console.log("Required fields found:", requiredFields.length);
 
+    requiredFields.forEach(function (field) {
+      field.addEventListener("blur", function () {
+        if (!field.value.trim()) {
+          showFieldError(field, "This field is required.");
+        } else if (field.type === "tel") {
+          const phoneRegex = /^\+?[\d\s\-().]{10,15}$/;
+          if (!phoneRegex.test(field.value.trim())) {
+            showFieldError(field, "Please enter a valid phone number.");
+          } else {
+            clearFieldError(field);
+          }
+        } else {
+          clearFieldError(field);
+        }
+      });
+
+      field.addEventListener("input", function () {
+        if (field.value.trim()) {
+          if (field.type === "tel") {
+            const phoneRegex = /^\+?[\d\s\-().]{10,15}$/;
+            if (!phoneRegex.test(field.value.trim())) {
+              showFieldError(field, "Please enter a valid phone number.");
+            } else {
+              clearFieldError(field);
+            }
+          } else {
+            clearFieldError(field);
+          }
         }
       });
     });
