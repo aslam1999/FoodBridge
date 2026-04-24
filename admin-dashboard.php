@@ -13,7 +13,15 @@ $stmt = $pdo->query("SELECT * FROM donations ORDER BY created_at DESC");
 $donations = $stmt->fetchAll();
 
 // Fetch volunteers for assignment dropdown
-$stmt = $pdo->query("SELECT id, first_name, last_name FROM users WHERE role = 'volunteer'");
+$stmt = $pdo->query("
+  SELECT u.id, u.first_name, u.last_name, u.phone,
+    COUNT(CASE WHEN d.status IN ('assigned', 'accepted') THEN 1 END) as active_count
+  FROM users u
+  LEFT JOIN assignments a ON a.volunteer_id = u.id
+  LEFT JOIN donations d ON d.id = a.donation_id
+  WHERE u.role = 'volunteer'
+  GROUP BY u.id, u.first_name, u.last_name, u.phone
+");
 $volunteers = $stmt->fetchAll();
 
 // Count stats
@@ -75,6 +83,27 @@ foreach ($donations as $d) {
         </div>
       </section>
 
+      <section class="volunteers-section">
+  <h2>Volunteers</h2>
+  <?php if (empty($volunteers)): ?>
+    <p>No volunteers registered yet.</p>
+  <?php else: ?>
+    <div class="volunteers-grid">
+      <?php foreach ($volunteers as $v): ?>
+        <div class="volunteer-card">
+          <div class="volunteer-info">
+            <strong><?php echo htmlspecialchars($v['first_name'] . ' ' . $v['last_name']); ?></strong>
+            <span><?php echo htmlspecialchars($v['phone']); ?></span>
+          </div>
+          <span class="status <?php echo $v['active_count'] > 0 ? 'assigned' : 'completed'; ?>">
+            <?php echo $v['active_count'] > 0 ? 'Busy' : 'Available'; ?>
+          </span>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  <?php endif; ?>
+</section>
+
       <section class="donation-list">
         <?php if (empty($donations)): ?>
           <p>No donations submitted yet.</p>
@@ -97,13 +126,14 @@ foreach ($donations as $d) {
                   <form class="assign-form" action="assign_volunteer.php" method="POST">
                     <input type="hidden" name="donation_id" value="<?php echo $donation['id']; ?>">
                     <select name="volunteer_id" class="volunteer-select" required>
-                      <option value="">Assign Volunteer</option>
-                      <?php foreach ($volunteers as $volunteer): ?>
-                        <option value="<?php echo $volunteer['id']; ?>">
-                          <?php echo htmlspecialchars($volunteer['first_name'] . ' ' . $volunteer['last_name']); ?>
-                        </option>
-                      <?php endforeach; ?>
-                    </select>
+  <option value="">Assign Volunteer</option>
+  <?php foreach ($volunteers as $volunteer): ?>
+    <option value="<?php echo $volunteer['id']; ?>">
+      <?php echo htmlspecialchars($volunteer['first_name'] . ' ' . $volunteer['last_name']); ?>
+      <?php echo $volunteer['active_count'] > 0 ? ' (busy)' : ' (available)'; ?>
+    </option>
+  <?php endforeach; ?>
+</select>
                     <button type="submit" class="btn-small">Assign</button>
                   </form>
                 <?php else: ?>
