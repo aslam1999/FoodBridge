@@ -402,7 +402,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Auto-format phone number
     const phoneField = form.querySelector('input[type="tel"]');
-    console.log("Phone field found:", phoneField);
     if (phoneField) {
       phoneField.addEventListener("input", function () {
         let value = phoneField.value.replace(/\D/g, "");
