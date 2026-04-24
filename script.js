@@ -377,7 +377,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!field.value.trim()) {
       showFieldError(field, "This field is required.");
     } else if (field.type === "tel") {
-      const phoneRegex = /^\+?[\d\s\-().]{10,15}$/;
+      const phoneRegex = /^\d{3}-\d{3}-\d{4}$/;
       if (!phoneRegex.test(field.value.trim())) {
         showFieldError(field, "Please enter a valid phone number.");
       } else {
@@ -400,11 +400,31 @@ document.addEventListener("DOMContentLoaded", function () {
       "input[required], select[required], textarea[required]",
     );
 
+    // Auto-format phone number
+    const phoneField = form.querySelector('input[type="tel"]');
+    console.log("Phone field found:", phoneField);
+    if (phoneField) {
+      phoneField.addEventListener("input", function () {
+        let value = phoneField.value.replace(/\D/g, "");
+        if (value.length <= 3) {
+          phoneField.value = value;
+        } else if (value.length <= 6) {
+          phoneField.value = value.slice(0, 3) + "-" + value.slice(3);
+        } else {
+          phoneField.value =
+            value.slice(0, 3) +
+            "-" +
+            value.slice(3, 6) +
+            "-" +
+            value.slice(6, 10);
+        }
+      });
+    }
+
     requiredFields.forEach(function (field) {
       field.addEventListener("blur", function () {
         validateField(field);
       });
-
       field.addEventListener("input", function () {
         if (field.value.trim()) {
           validateField(field);
