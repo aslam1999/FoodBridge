@@ -868,6 +868,60 @@ span.flatpickr-weekday {
   color: var(--color-text) !important;
 }
 
+/* Time picker overrides */
+.flatpickr-time input:hover,
+.flatpickr-time input:focus,
+.flatpickr-time .flatpickr-am-pm:hover,
+.flatpickr-time .flatpickr-am-pm:focus {
+  background: var(--color-primary-pale, #e8f5ec);
+  color: var(--color-primary);
+}
+
+.flatpickr-time .numInputWrapper:hover {
+  background: var(--color-primary-pale, #e8f5ec);
+}
+
+.flatpickr-time input.flatpickr-hour,
+.flatpickr-time input.flatpickr-minute {
+  color: var(--color-text);
+}
+
+.flatpickr-time .flatpickr-time-separator {
+  color: var(--color-text);
+}
+
+.flatpickr-time .flatpickr-am-pm {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.flatpickr-time input.flatpickr-hour:focus,
+.flatpickr-time input.flatpickr-minute:focus {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  outline: none !important;
+}
+
+.numInputWrapper:hover,
+.numInputWrapper:focus {
+  background: var(--color-primary-pale, #e8f5ec) !important;
+}
+
+.flatpickr-time input {
+  caret-color: var(--color-primary);
+}
+
+.flatpickr-time input::selection {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+}
+
+.flatpickr-time .numInput:focus {
+  background: var(--color-primary) !important;
+  color: #fff !important;
+  border-radius: 4px;
+}
+
 /* =========================
    Dashboard - Shared
 ========================= */
