@@ -50,7 +50,6 @@ foreach ($assignments as $a) {
 </div>
         <nav class="nav">
           <ul class="nav-list">
-            <li><a href="index.php">Home</a></li>
             <li><a href="logout.php">Logout</a></li>
           </ul>
         </nav>
